@@ -1,0 +1,80 @@
+<h1>循环获取数据索引,判断分支if</h1>
+<ol>
+  <li *ngFor="let item of arr;let key=index">
+    {{key}}-------{{item}}
+
+    <span *ngIf="key==2">
+     <p [ngStyle]="{'color':'blue'}">第三条纪录ngStyle</p>
+    </span>
+
+    <span [ngClass]="{'red':key==0,'blue':key==1}">
+      第一二条纪录ngClass
+     </span>
+
+  </li>
+  <hr>
+</ol>
+<hr>
+
+<h1>判断分支switch</h1>
+<span [ngSwitch]='orderStatus'>
+<p *ngSwitchCase='1'>
+分支1
+</p>
+<p *ngSwitchCase='2'>
+分支2
+</p>
+<p *ngSwitchCase='3'>
+分支3
+</p>
+<p *ngSwitchDefault>
+分支其他
+</p>
+</span>
+<hr>
+
+<div [ngClass]="{'red':flag,'blue':!flag}">
+  ngclass演示
+</div>
+<hr>
+
+<h1>管道</h1>
+<p>{{"abcdedfgh" | uppercase}}</p>
+<p>{{"2020/03/09"| date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>{{today}}      格式化前</p>
+<p>{{today | date:'yyyy-MM-dd HH:mm:ss'}}      格式化后</p>
+<hr>
+
+<h1>事件</h1>
+<strong>{{title}}</strong>
+<br>
+<button (click)="run()">执行事件</button>
+<br>
+<button (click)="getData()">执行方法获取数据</button>
+<br>
+<button (click)="setData()">执行方法改变数据</button>
+<hr>
+
+<h1>表单事件，事件对象</h1>
+keydown:<input type="text" (keydown)="keyDown($event)"/>
+<br>
+keyup:<input type="text" (keyup)="keyDown($event)"/>
+<br>
+<hr>
+
+<h1>双向数据绑定：MVVM只针对于表单</h1>
+<input type="text" [(ngModel)]='keywords'/>
+{{keywords}}
+<br>
+<button (click)="changkeywords()">改变值</button>
+<br>
+<button (click)="getkeywords()">获取值</button>
+<br>
+<hr>
+
+<h1>引入图片</h1>
+<h3>静态图片</h3>
+<img src="assets\images\Abstract2.jpg" height="300" width="100%"/>
+<hr>
+<h3>动态图片</h3>
+<img [src]="picUrl"/>

@@ -1,0 +1,39 @@
+<h1>{{student}}</h1>
+<hr>
+<h1>{{message}}</h1>
+<hr>
+<div [title]="title">
+  zhangsan
+</div>
+<hr>
+<span [innerHTML]='content' class='red'></span>
+<hr>
+<ol>
+<li *ngFor="let item1 of arr1">
+{{item1}}
+</li>
+<hr>
+</ol>
+<ol>
+  <li *ngFor="let item2 of arr2">
+  {{item2}}
+  </li>
+  <hr>
+</ol>
+<ol>
+    <li *ngFor="let item3 of arr3">
+    {{item3}}
+    </li>
+    <hr>
+</ol>
+<ol>
+  <li *ngFor="let item4 of arr4">
+    {{item4.username}}----{{item4.age}}
+    <ol>
+    <li *ngFor="let item5 of item4.hobby">
+      {{item5.hobbyname}}----{{item5.hobbyyear}}
+    </li>
+  </ol>
+  </li>
+  <hr>
+</ol>

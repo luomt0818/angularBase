@@ -1,0 +1,16 @@
+<h1>ToDoList</h1>
+<input type="text" [(ngModel)]="keywords" (keyup)="doadd($event)"/>
+<hr>
+<h1>待办事项</h1>
+<ul>
+  <li *ngFor="let item of todolist;let key=index" [hidden]="item.status==1">
+   <input type="checkbox" [(ngModel)]='item.status'>{{item.title}}<input type="button" value="X" (click)='doover(key)'>
+  </li>
+</ul>
+
+<h1>已完成事项</h1>
+<ul>
+  <li *ngFor="let item2 of todolist;let key2=index" [hidden]="item2.status==0">
+    <input type="checkbox"  [(ngModel)]='item2.status'>{{item2.title}}<input type="button" value="X" (click)='doover(key2)'>
+  </li>
+</ul>
