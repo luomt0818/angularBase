@@ -23,6 +23,7 @@ import { AnewsComponent } from './components/anews/anews.component';
 
 import { ParentComponent } from './components/parent/parent.component';
 import { SonComponent } from './components/son/son.component';
+import { PasswordModComponent } from './passwordMod/passwordMod.component';
 
 @NgModule({
    declarations: [
@@ -41,7 +42,8 @@ import { SonComponent } from './components/son/son.component';
       AhomeComponent,
       AnewsComponent,
       ParentComponent,
-      SonComponent
+      SonComponent,
+      PasswordModComponent
    ],
    imports: [
       BrowserModule,
